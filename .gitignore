@@ -74,7 +74,7 @@ Thumbs.db
 .AppleDouble
 .LSOverride
 
-# Flutter (if selected)
+# Flutter
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
@@ -85,8 +85,16 @@ flutter_*.png
 linked_*.ds
 unlinked.ds
 unlinked_spec.ds
+**/doc/api/
+**/ios/Flutter/.last_build_id
+app.*.symbols
+app.*.map.json
+/android/app/debug
+/android/app/profile
+/android/app/release
+.metadata
 
-# React Native (if selected)
+# Signing keys and credentials
 *.jks
 *.p8
 *.p12
@@ -95,7 +103,7 @@ unlinked_spec.ds
 *.orig.*
 web-build/
 
-# iOS (if selected)
+# iOS
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -113,7 +121,7 @@ DerivedData/
 *.xcuserstate
 project.xcworkspace/
 
-# Android (if selected)
+# Android
 *.apk
 *.ap_
 *.aab
@@ -124,13 +132,13 @@ captures/
 .externalNativeBuild/
 .cxx/
 
-# Windows (if selected)
+# Windows
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-# macOS (if selected)
+# macOS
 *.xcuserstate
 project.xcworkspace/
 xcuserdata/

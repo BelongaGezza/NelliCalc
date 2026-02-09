@@ -1,0 +1,22 @@
+name: nelli_calc
+description: >-
+  A calculator that remembers prior results and lets you drag them
+  into new calculations. Touch-optimised with responsive layouts.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.10.8
+
+dependencies:
+  cupertino_icons: ^1.0.8
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^10.1.0
+
+flutter:
+  uses-material-design: true

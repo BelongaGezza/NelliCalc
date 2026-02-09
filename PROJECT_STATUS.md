@@ -1,53 +1,86 @@
 # Project Status
 
-**Current Release:** R00 (Initial Setup)
-**Current Phase:** P00 (Setup)
-**Current Sprint:** sprint-000-initial-setup
+**Current Release:** R01 (Foundation)
+**Current Phase:** P01 (Tech Stack & Architecture)
+**Current Sprint:** sprint-002-architecture
+**Tech Stack:** Flutter (Dart)
 
 ## Release Roadmap
 
-- **R00**: Repository setup and configuration (CURRENT)
-- **R01**: Tech stack selection and initial scaffolding
-- **R02**: Core calculator implementation
-- **R03**: UI/UX implementation
-- **R04**: Platform-specific optimisations
-- **R05**: Testing and polish
+| Release | Focus | Status |
+|---------|-------|--------|
+| R00 | Repository setup and configuration | COMPLETE |
+| R01 | Tech stack, architecture, and project foundation | CURRENT |
+| R02 | Core calculator engine and data persistence | Planned |
+| R03 | UI/UX implementation (responsive, touch, drag-and-drop) | Planned |
+| R04 | Platform optimisation, testing, and release | Planned |
 
 ## Phase Breakdown
 
-### R00-P00: Initial Setup
-- Sprint 000: Repository structure and documentation setup ← CURRENT
-- Sprint 001: Tech stack evaluation and selection
+### R00-P00: Initial Setup (COMPLETE)
 
-### R01-P01: Tech Stack Selection
-- Sprint 002: Complete tech stack research
-- Sprint 003: Make tech stack decision and create project scaffolding
+- Sprint 000: Repository structure and documentation setup — COMPLETE (archived)
+
+### R01-P01: Foundation
+
+- Sprint 001: Flutter project scaffold, drag-and-drop PoC, CI/CD setup
+- Sprint 002: Architecture document, data model, UX wireframes and interaction design
 
 ### R02-P02: Core Development
-- Sprint 004: Calculator engine implementation
-- Sprint 005: History/result storage system
-- Sprint 006: State management
+
+- Sprint 003: Calculator engine (expression parsing, evaluation, error handling) + unit tests
+- Sprint 004: Result history and data persistence (local storage) + tests
 
 ### R03-P03: UI/UX Development
-- Sprint 007: Basic UI layout
-- Sprint 008: Touch interactions and drag-and-drop
-- Sprint 009: Responsive layouts (landscape/portrait)
 
-### R04-P04: Platform Optimisation
-- Sprint 010: iOS/iPadOS optimisations
-- Sprint 011: Android optimisations
-- Sprint 012: Desktop platform support
+- Sprint 005: Core UI layout — responsive from the start (landscape side panel, portrait slide-over)
+- Sprint 006: Drag-and-drop interactions, touch gestures, haptic feedback + tests
+- Sprint 007: UI polish, accessibility (WCAG AA), theming (light/dark)
 
-### R05-P05: Testing & Release
-- Sprint 013: Testing and bug fixes
-- Sprint 014: Documentation and user guides
-- Sprint 015: App store preparation
+### R04-P04: Platform & Release
+
+- Sprint 008: Cross-platform testing and platform-specific optimisations
+- Sprint 009: Integration testing, documentation, app store preparation
+
+## Sprint Summary
+
+| Sprint | Release | Description | Status |
+|--------|---------|-------------|--------|
+| 000 | R00 | Repository setup | Complete |
+| 001 | R01 | Flutter scaffold + PoC + CI/CD | Complete |
+| 002 | R01 | Architecture + data model + UX design | Pending |
+| 003 | R02 | Calculator engine + tests | Pending |
+| 004 | R02 | Result history + persistence + tests | Pending |
+| 005 | R03 | Core responsive UI layout | Pending |
+| 006 | R03 | Drag-and-drop + touch interactions | Pending |
+| 007 | R03 | UI polish + accessibility + theming | Pending |
+| 008 | R04 | Cross-platform testing + optimisations | Pending |
+| 009 | R04 | Integration testing + docs + release prep | Pending |
+
+## Key Decisions
+
+| Decision | Date | Outcome | Reference |
+|----------|------|---------|-----------|
+| Tech stack | 2026-02-09 | Flutter (Dart) | [tech-stack-evaluation.md](RESEARCH/tech-stack-evaluation.md) |
+| State management | 2026-02-09 | Riverpod (no codegen) | [state-management-evaluation.md](RESEARCH/state-management-evaluation.md) |
+| Responsive breakpoint | 2026-02-09 | 600dp (wide/narrow) | Sprint 001 PoC |
+| Licensing | 2026-02-09 | Dual MIT/Apache-2.0 | Sprint 000 |
+
+## Design Principles
+
+- **Touch-first**: Primary platform is handheld touchscreen phones
+- **Responsive from day one**: Landscape and portrait layouts designed upfront, not retrofitted
+- **Test as you go**: Unit tests required from Sprint 003 onwards; no deferred testing phase
+- **Accessibility built-in**: WCAG AA compliance, adequate touch targets (48x48dp minimum)
+- **Simple architecture**: Prefer the simplest solution that meets requirements
 
 ## Quick Links
 
-- Active Sprint: [SPRINTS/sprint-000-initial-setup.md](SPRINTS/sprint-000-initial-setup.md)
+- Active Sprint: [SPRINTS/sprint-002-architecture.md](SPRINTS/sprint-002-architecture.md)
+- Archived Sprints: [SPRINTS/archive/](SPRINTS/archive/)
 - Lessons Learnt: [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
 - Research Docs: [RESEARCH/](RESEARCH/)
+- Tech Stack Decision: [RESEARCH/tech-stack-evaluation.md](RESEARCH/tech-stack-evaluation.md)
 
 ## Naming Conventions
 
@@ -56,8 +89,6 @@
 - Sprints: sprint-NNN-description.md
 - Lessons: LESSON-NNN (category-based ranges)
 
-## Current Focus
-
-Setting up repository structure, documentation, and preparing for tech stack selection. Repository will be made public once initial setup is complete.
+---
 
 _Last updated: 2026-02-09_

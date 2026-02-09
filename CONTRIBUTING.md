@@ -31,19 +31,37 @@ This project is currently in initial setup phase. Once the repository structure 
 
 ## Code Standards
 
-Code standards will be defined once the tech stack is selected. General principles:
+### Flutter/Dart Conventions
+- Follow [Effective Dart](https://dart.dev/effective-dart) style guide
+- Linting enforced via [`very_good_analysis`](https://pub.dev/packages/very_good_analysis) (strict rules)
+- Use `const` constructors wherever possible
+- Prefer composition over inheritance for widgets
+- Keep widgets small and focused (single responsibility)
+- Separate business logic from UI
 
+### General Principles
 - Write tests for new functionality
-- Document all public APIs
+- Document all public APIs with dartdoc (`///`) comments
 - Use conventional commits for commit messages
 - Follow British English spelling in documentation (organise, colour, behaviour, etc.)
-- Follow platform-specific conventions for code (e.g., if using Flutter, follow Dart conventions)
+- Code follows Dart conventions (e.g., `Color` not `Colour` — matching Flutter APIs)
 
-## CI & Checks
+## Pre-Submit Checks
 
-- Ensure CI passes on your PR
-- Add integration tests for critical features
-- All tests must pass before merging
+Before submitting a PR, run the following locally:
+
+```bash
+# 1. Format — must produce zero changes
+dart format --set-exit-if-changed .
+
+# 2. Analyse — must produce zero warnings/errors
+dart analyze
+
+# 3. Test — all tests must pass
+flutter test
+```
+
+CI runs these same checks automatically on every push and PR.
 
 ## Project Management
 

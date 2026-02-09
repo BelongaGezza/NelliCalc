@@ -1,25 +1,18 @@
 # Quick Start — NelliCalc
 
-This guide will help you get started with NelliCalc development. The exact setup steps will depend on the selected tech stack, which is currently under evaluation.
+This guide will help you get started with NelliCalc development.
 
 ## Prerequisites
 
-The following prerequisites will be required once the tech stack is selected:
+- **Flutter SDK** (3.38.x stable or later) — [Installation guide](https://docs.flutter.dev/get-started/install)
+- **Dart SDK** — included with Flutter
+- **Platform toolchains** (install as needed for your target):
+  - **Linux desktop**: clang, cmake, ninja, pkg-config, GTK 3 dev headers
+  - **Android**: Android Studio + Android SDK
+  - **iOS/macOS**: Xcode (macOS only)
+  - **Windows**: Visual Studio with C++ desktop workload
 
-### For Flutter (if selected)
-- Flutter SDK (latest stable)
-- Dart SDK
-- Xcode (for iOS development)
-- Android Studio (for Android development)
-
-### For React Native (if selected)
-- Node.js and npm/yarn
-- React Native CLI
-- Xcode (for iOS development)
-- Android Studio (for Android development)
-
-### For Other Stacks
-- Requirements will be documented once the tech stack decision is made
+Run `flutter doctor` to verify your setup.
 
 ## Getting Started
 
@@ -30,52 +23,62 @@ The following prerequisites will be required once the tech stack is selected:
    ```
 
 2. **Install dependencies:**
-   - Instructions will be provided once the tech stack is selected
+   ```bash
+   flutter pub get
+   ```
 
-3. **Build the project:**
-   - Instructions will be provided once the tech stack is selected
+3. **Run the app:**
+   ```bash
+   flutter run            # runs on the default connected device
+   flutter run -d linux   # runs on Linux desktop
+   flutter run -d chrome  # runs in Chrome (web)
+   ```
 
 4. **Run tests:**
-   - Instructions will be provided once the tech stack is selected
+   ```bash
+   flutter test
+   ```
 
-5. **Start development:**
-   - Check [PROJECT_STATUS.md](PROJECT_STATUS.md) for current sprint
-   - Review active sprint file in [SPRINTS/](SPRINTS/)
-   - Follow [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines
-
-## Development Workflow
-
-This project uses a sprint-based development workflow:
-
-1. Check [PROJECT_STATUS.md](PROJECT_STATUS.md) for the current sprint
-2. Review the active sprint file in [SPRINTS/](SPRINTS/)
-3. Claim a role from the Role Assignment Table in the sprint file
-4. Complete assigned tasks
-5. Submit a Pull Request
+5. **Check code quality:**
+   ```bash
+   dart format --set-exit-if-changed .
+   dart analyze
+   ```
 
 ## Project Structure
 
 ```
 NelliCalc/
+├── .agents/           # AI agent persona files
+├── android/           # Android platform project
+├── ios/               # iOS platform project
+├── lib/               # Dart source code (main application)
+├── linux/             # Linux desktop platform project
+├── macos/             # macOS platform project
+├── windows/           # Windows platform project
+├── test/              # Dart/Flutter tests
 ├── RESEARCH/          # Architecture decisions, tech stack research
 ├── SPRINTS/           # Sprint tasking files
 │   └── archive/       # Completed sprints
 ├── docs/              # User documentation
-├── src/               # Source code (structure depends on tech stack)
-├── tests/             # Test files
-└── [tech stack specific files]
+├── pubspec.yaml       # Dart/Flutter dependencies
+└── analysis_options.yaml  # Linting and analysis rules
 ```
 
-## Next Steps
+## Development Workflow
 
-Once the tech stack is selected (Sprint 001), this guide will be updated with:
-- Specific installation instructions
-- Build and run commands
-- Testing procedures
-- Development environment setup
+1. Check [PROJECT_STATUS.md](PROJECT_STATUS.md) for the current sprint
+2. Review the active sprint file in [SPRINTS/](SPRINTS/)
+3. Follow [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines
+4. Before submitting a PR, ensure:
+   - `dart format .` produces no changes
+   - `dart analyze` reports no issues
+   - `flutter test` passes
 
 ## Resources
 
+- [Flutter Documentation](https://docs.flutter.dev/)
+- [Dart Documentation](https://dart.dev/guides)
 - [Contributing Guidelines](CONTRIBUTING.md)
 - [Project Status](PROJECT_STATUS.md)
 - [Research Documentation](RESEARCH/)
