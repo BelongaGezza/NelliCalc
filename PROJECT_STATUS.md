@@ -23,7 +23,7 @@
 
 ### R01-P01: Foundation
 
-- Sprint 001: Flutter project scaffold, drag-and-drop PoC, CI/CD setup
+- Sprint 001: Flutter project scaffold, drag-and-drop PoC, CI/CD setup — COMPLETE
 - Sprint 002: Architecture document, data model, UX wireframes and interaction design
 
 ### R02-P02: Core Development
@@ -31,9 +31,16 @@
 - Sprint 003: Calculator engine (expression parsing, evaluation, error handling) + unit tests
 - Sprint 004: Result history and data persistence (local storage) + tests
 
-### R03-P03: UI/UX Development
+### D-Track: Parallel Design Track (runs alongside R02)
 
-- Sprint 005: Core UI layout — responsive from the start (landscape side panel, portrait slide-over)
+- Sprint D01: Visual design prototype — theme, styled calculator UI, feedback capture
+- Sprint D02: Design iteration based on feedback (if needed)
+
+The design track runs independently of the engine sprints. It produces a non-functional but fully styled UI prototype for early feedback. The design track and engine track converge at R03 when the styled UI is wired to the real engine.
+
+### R03-P03: UI/UX Integration (design + engine converge)
+
+- Sprint 005: Integrate styled UI with calculator engine (responsive layout + real state)
 - Sprint 006: Drag-and-drop interactions, touch gestures, haptic feedback + tests
 - Sprint 007: UI polish, accessibility (WCAG AA), theming (light/dark)
 
@@ -44,18 +51,35 @@
 
 ## Sprint Summary
 
-| Sprint | Release | Description | Status |
-|--------|---------|-------------|--------|
+| Sprint | Track | Description | Status |
+|--------|-------|-------------|--------|
 | 000 | R00 | Repository setup | Complete |
 | 001 | R01 | Flutter scaffold + PoC + CI/CD | Complete |
 | 002 | R01 | Architecture + data model + UX design | Pending |
 | 003 | R02 | Calculator engine + tests | Pending |
 | 004 | R02 | Result history + persistence + tests | Pending |
-| 005 | R03 | Core responsive UI layout | Pending |
+| D01 | Design | Visual prototype + theme + feedback | Pending |
+| D02 | Design | Design iteration (if needed) | Planned |
+| 005 | R03 | Integrate styled UI + engine | Pending |
 | 006 | R03 | Drag-and-drop + touch interactions | Pending |
 | 007 | R03 | UI polish + accessibility + theming | Pending |
 | 008 | R04 | Cross-platform testing + optimisations | Pending |
 | 009 | R04 | Integration testing + docs + release prep | Pending |
+
+## Parallel Track Schedule
+
+```
+Sprint 002  ──────────────────►  (architecture)
+                                  │
+                 ┌────────────────┤
+                 ▼                ▼
+Sprint 003 ─────────►   Sprint D01 ─────────►  (engine + design in parallel)
+Sprint 004 ─────────►   Sprint D02 ─────────►  (engine + design iterate)
+                 │                │
+                 └───────┬────────┘
+                         ▼
+                  Sprint 005  (converge: styled UI + working engine)
+```
 
 ## Key Decisions
 
@@ -64,6 +88,7 @@
 | Tech stack | 2026-02-09 | Flutter (Dart) | [tech-stack-evaluation.md](RESEARCH/tech-stack-evaluation.md) |
 | State management | 2026-02-09 | Riverpod (no codegen) | [state-management-evaluation.md](RESEARCH/state-management-evaluation.md) |
 | Responsive breakpoint | 2026-02-09 | 600dp (wide/narrow) | Sprint 001 PoC |
+| UI feedback approach | 2026-02-09 | Parallel design track + Linux screenshots | Team Leader review |
 | Licensing | 2026-02-09 | Dual MIT/Apache-2.0 | Sprint 000 |
 
 ## Design Principles
@@ -73,10 +98,12 @@
 - **Test as you go**: Unit tests required from Sprint 003 onwards; no deferred testing phase
 - **Accessibility built-in**: WCAG AA compliance, adequate touch targets (48x48dp minimum)
 - **Simple architecture**: Prefer the simplest solution that meets requirements
+- **Design early, iterate fast**: Visual prototype before engine implementation; feedback via Linux desktop + screenshots
 
 ## Quick Links
 
 - Active Sprint: [SPRINTS/sprint-002-architecture.md](SPRINTS/sprint-002-architecture.md)
+- Design Track: [SPRINTS/sprint-D01-visual-prototype.md](SPRINTS/sprint-D01-visual-prototype.md) (pending)
 - Archived Sprints: [SPRINTS/archive/](SPRINTS/archive/)
 - Lessons Learnt: [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
 - Research Docs: [RESEARCH/](RESEARCH/)
@@ -86,7 +113,7 @@
 
 - Releases: R00, R01, R02...
 - Phases: P00, P01, P02...
-- Sprints: sprint-NNN-description.md
+- Sprints: sprint-NNN-description.md (numbered) or sprint-DNN-description.md (design track)
 - Lessons: LESSON-NNN (category-based ranges)
 
 ---
