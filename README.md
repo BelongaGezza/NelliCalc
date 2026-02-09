@@ -1,17 +1,56 @@
 # NelliCalc
-Basic calculator that remembers prior results.
-These prior results can be easily accessed and dragged back into the calculation.
-Particularly useful for touchscreen devices in landscape mode, the prior results diplay to the side of the calculator.
-When in portrait mode the prior results can be accessed by sliding over a pane.
 
-    Copyright (C) 2021  Gerry Gillies
+A calculator application that remembers prior results and allows you to drag them back into calculations. Designed for touchscreen devices with responsive layouts optimised for both landscape and portrait modes.
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+## Features
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+- **Result History**: Prior calculation results are remembered and easily accessible
+- **Drag & Drop**: Drag previous results back into new calculations
+- **Touch-Optimised**: Designed specifically for touchscreen devices
+- **Responsive Layout**: 
+  - Landscape mode: Prior results display to the side of the calculator
+  - Portrait mode: Prior results accessible via a slide-over pane
+- **Cross-Platform**: Supports macOS, iOS, iPadOS, Android, and Windows touch-enabled devices
+- **Primary Platform**: Handheld touchscreen phones
+
+## Quick Start
+
+See [QUICK_START.md](QUICK_START.md) for development setup instructions.
+
+## Platform Support
+
+| Platform | Status | Notes |
+|----------|--------|-------|
+| iOS | Planned | Primary target platform |
+| Android | Planned | Primary target platform |
+| iPadOS | Planned | Optimised for tablet interface |
+| macOS | Planned | Touch-enabled devices |
+| Windows | Planned | Touch-enabled devices |
+
+## Development
+
+This project uses a sprint-based development workflow. See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute.
+
+- **Current Status**: [PROJECT_STATUS.md](PROJECT_STATUS.md)
+- **Active Sprints**: [SPRINTS/](SPRINTS/)
+- **Research & Architecture**: [RESEARCH/](RESEARCH/)
+
+## License
+
+This project is dual-licensed under the MIT License and Apache License 2.0. You may choose either license for your use.
+
+- [MIT License](LICENSE-MIT)
+- [Apache License 2.0](LICENSE-APACHE)
+
+Copyright (C) 2021-2025 Gerry Gillies
+
+## Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
+
+## Documentation
+
+- [Quick Start Guide](QUICK_START.md) - Get started with development
+- [Contributing Guidelines](CONTRIBUTING.md) - How to contribute
+- [Project Status](PROJECT_STATUS.md) - Current development status
+- [Changelog](CHANGELOG.md) - Version history
