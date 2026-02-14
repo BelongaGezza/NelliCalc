@@ -68,7 +68,47 @@ _Reserve for performance issues, optimisation techniques, mobile-specific consid
 
 ## Security & Safety (700-799)
 
-_Reserve for security vulnerabilities, input validation, data protection._
+### LESSON-700: Defensive parsing for persisted JSON (HistoryEntry.fromJson)
+
+**Category:** Security & Safety  
+**Date:** 2026-02-14  
+**Severity:** Medium  
+**Sprint:** sprint-002-architecture (security review)
+
+**Problem:**  
+`HistoryEntry.fromJson` uses direct casts and `DateTime.parse` without validation. When persistence is implemented (Sprint 004), corrupted or tampered storage can cause uncaught exceptions on load and crash the app or leave history in a bad state.
+
+**Solution:**  
+In the data layer (e.g. `LocalHistoryRepository.loadAll()`), decode the stored list in a try/catch. When iterating list elements, call a safe parser (e.g. try/catch per element or a `HistoryEntry.tryFromJson` that returns `null` on invalid input). Skip invalid entries and log; do not let a single bad entry crash the app.
+
+**Prevention:**  
+For any model that deserialises from storage or network, use defensive parsing: validate types and required keys, handle null/missing fields, and catch parse exceptions at the boundary. See security review: `docs/security-review-sprint-002.md`.
+
+**Related Files:** `lib/models/history_entry.dart`, `lib/data/local_history_repository.dart`  
+**Cross-References:** LESSON-701, RESEARCH/architecture.md §6.6
+
+---
+
+### LESSON-701: Security review checklist for future sprints
+
+**Category:** Security & Safety  
+**Date:** 2026-02-14  
+**Severity:** Low  
+**Sprint:** sprint-002-architecture (security review)
+
+**Problem:**  
+Several low-severity items should be addressed in later sprints to maintain security posture: expression input validation, user-facing error messages, dependency audit in CI, and PoC code in the release bundle.
+
+**Solution:**  
+- **Sprint 003:** Engine must accept only allowed expression characters (digits, `+`, `-`, `*`, `/`, `.`, `(`, `)`, whitespace); keep `CalculatorError.message` user-safe (no stack traces or paths).  
+- **CI:** Add a step that runs `dart pub outdated` (and vulnerability checks when available).  
+- **Pre-release:** Remove or guard `lib/poc/` so it is not included in production builds.
+
+**Prevention:**  
+Re-run the Security Specialist checklist (data storage, input validation, dependencies, permissions, platform config, error handling) at the end of each release phase. Reference `docs/security-review-sprint-002.md` and `.agents/security-specialist.md`.
+
+**Related Files:** `lib/engine/calculator_engine.dart`, `lib/engine/calculator_error.dart`, `lib/poc/`, CI workflow  
+**Cross-References:** LESSON-700, OWASP Mobile Top 10
 
 ## Documentation & Process (800-899)
 
