@@ -1,12 +1,15 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:nelli_calc/main.dart';
+import 'package:nelli_calc/app.dart';
 
 void main() {
-  testWidgets('NelliCalc app renders responsive PoC', (tester) async {
-    await tester.pumpWidget(const NelliCalcApp());
+  testWidgets('NelliCalc app renders placeholder home screen', (
+    tester,
+  ) async {
+    await tester.pumpWidget(const ProviderScope(child: NelliCalcApp()));
 
-    expect(find.text('Responsive PoC'), findsOneWidget);
-    expect(find.text('Calculator Display'), findsOneWidget);
+    expect(find.text('NelliCalc'), findsOneWidget);
+    expect(find.text('NelliCalc — Coming soon'), findsOneWidget);
   });
 }

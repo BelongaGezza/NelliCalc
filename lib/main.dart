@@ -1,22 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nelli_calc/poc/responsive_poc.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:nelli_calc/app.dart';
 
 void main() {
-  runApp(const NelliCalcApp());
-}
-
-class NelliCalcApp extends StatelessWidget {
-  const NelliCalcApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'NelliCalc',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
-        useMaterial3: true,
-      ),
-      home: const ResponsivePocScreen(),
-    );
-  }
+  runApp(const ProviderScope(child: NelliCalcApp()));
 }

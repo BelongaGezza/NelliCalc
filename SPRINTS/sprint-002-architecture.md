@@ -1,6 +1,6 @@
 # Sprint 002: Architecture, Data Model & UX Design
 
-**Status:** Planning
+**Status:** In Progress
 **Release:** R01 | **Phase:** P01
 **Start:** 2026-02-09 | **Target End:** 2026-02-16
 
@@ -74,7 +74,7 @@ PoC code lives in `lib/poc/` and should be replaced by production architecture i
 - [ ] Navigation strategy documented (single screen with responsive layout, no routes needed initially)
 - [ ] Dependency direction rules defined (presentation → domain ← data; domain has no Flutter imports)
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** System Architect
 **Dependencies:** None
 **Priority:** Critical
@@ -98,7 +98,7 @@ PoC code lives in `lib/poc/` and should be replaced by production architecture i
 - [ ] Data model documented in `RESEARCH/architecture.md` (data model section)
 - [ ] Immutable data classes specified (using `freezed` or manual `copyWith`)
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** System Architect
 **Dependencies:** Task 1.1
 **Priority:** Critical
@@ -123,7 +123,7 @@ PoC code lives in `lib/poc/` and should be replaced by production architecture i
 - [ ] Decimal precision strategy documented
 - [ ] Interface documented in `RESEARCH/architecture.md` (calculator engine section)
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** System Architect
 **Dependencies:** Task 1.1
 **Priority:** High
@@ -150,7 +150,7 @@ PoC code lives in `lib/poc/` and should be replaced by production architecture i
 - [ ] Display area design defined (expression line, result line, drop target indicator)
 - [ ] Wireframes documented in `docs/wireframes/` (text-based or ASCII art is fine)
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** UI Designer
 **Dependencies:** Task 1.1 (need architecture to know component boundaries)
 **Priority:** High
@@ -178,7 +178,7 @@ PoC code lives in `lib/poc/` and should be replaced by production architecture i
 - [ ] Cross-boundary drag: portrait mode (from sheet up to display), landscape mode (from panel across to display)
 - [ ] Interaction spec documented in `docs/wireframes/`
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** UI Designer
 **Dependencies:** Task 2.1
 **Priority:** High
@@ -205,7 +205,7 @@ PoC code lives in `lib/poc/` and should be replaced by production architecture i
 - [ ] Font scaling behaviour documented (what happens when user has large text enabled?)
 - [ ] Accessibility spec documented in `docs/wireframes/`
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** UI Designer
 **Dependencies:** Task 2.1
 **Priority:** Medium
@@ -235,7 +235,7 @@ PoC code lives in `lib/poc/` and should be replaced by production architecture i
 - [ ] All existing tests still pass (update if needed for new home screen)
 - [ ] `dart analyze` clean, `dart format` clean
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** Senior Engineer
 **Dependencies:** Task 1.1, Task 1.2 (need architecture and data model before creating structure)
 **Priority:** High
@@ -271,7 +271,7 @@ PoC code lives in `lib/poc/` and should be replaced by production architecture i
 - [ ] Unit tests for both classes in `test/models/`
 - [ ] `dart analyze` clean, `dart format` clean, `flutter test` all passing
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** Senior Engineer
 **Dependencies:** Task 1.2 (need data model specification)
 **Priority:** High
@@ -290,7 +290,19 @@ PoC code lives in `lib/poc/` and should be replaced by production architecture i
 
 Record handover notes, blockers, and status updates here in chronological order (newest first).
 
-_No entries yet._
+**2026-02-14 — Task 3.2 complete (data model classes)**
+- Implemented `CalculatorError` (enum + Equatable class) in `lib/engine/calculator_error.dart`
+- Implemented `CalculatorState` (Equatable, nullable-factory copyWith) in `lib/models/calculator_state.dart`
+- Implemented `HistoryEntry` (Equatable, UUID v4, toJson/fromJson, displayValue) in `lib/models/history_entry.dart`
+- Added `equatable ^2.0.7` and `uuid ^4.0.0` to `pubspec.yaml`
+- 45 new unit tests (7 for CalculatorError, 19 for CalculatorState, 19 for HistoryEntry)
+- All 54 tests passing, zero analysis warnings, format clean
+
+**2026-02-11 — Tasks 1.1–1.3, 2.1–2.3, 3.1 complete**
+- Architecture document created: `RESEARCH/architecture.md` (layers, widget tree, provider graph, data model, engine interface, persistence strategy)
+- UX wireframes created: `docs/wireframes/calculator-layout.md`, `drag-drop-interaction.md`, `accessibility.md`
+- Production directory structure scaffolded in `lib/` with placeholder files and TODO comments
+- `flutter_riverpod` added, `ProviderScope` wrapping app in `main.dart`
 
 ---
 
@@ -299,13 +311,13 @@ _No entries yet._
 | Provider Task | Consumer Task | Status | Handover Completed | Notes |
 |---------------|---------------|--------|-------------------|-------|
 | Sprint 001 PoC | All tasks | Ready | Yes | PoC findings in Sprint 001 progress log |
-| Task 1.1 | Task 1.2, 1.3 | Pending | No | Architecture needed before data model and engine interface |
-| Task 1.1 | Task 2.1 | Pending | No | Architecture defines component boundaries for wireframes |
-| Task 2.1 | Task 2.2 | Pending | No | Layout wireframes before interaction design |
-| Task 2.1 | Task 2.3 | Pending | No | Layout wireframes before accessibility spec |
-| Task 1.1, 1.2 | Task 3.1 | Pending | No | Architecture and data model before directory structure |
-| Task 1.2 | Task 3.2 | Pending | No | Data model spec before implementation |
-| All tasks | Sprint 003 | Pending | No | Architecture, data model, wireframes needed before engine implementation |
+| Task 1.1 | Task 1.2, 1.3 | Complete | Yes | Architecture doc delivered 2026-02-11 |
+| Task 1.1 | Task 2.1 | Complete | Yes | Wireframes reference architecture components |
+| Task 2.1 | Task 2.2 | Complete | Yes | Interaction design builds on layout wireframes |
+| Task 2.1 | Task 2.3 | Complete | Yes | Accessibility spec references layout wireframes |
+| Task 1.1, 1.2 | Task 3.1 | Complete | Yes | Directory structure matches architecture doc |
+| Task 1.2 | Task 3.2 | Complete | Yes | Data model classes implemented with tests |
+| All tasks | Sprint 003 | Ready | Yes | All Sprint 002 deliverables complete |
 
 ---
 
@@ -313,16 +325,16 @@ _No entries yet._
 
 Sprint is considered complete when:
 
-- [ ] Architecture document created with layers, widget tree, provider graph, and directory structure
-- [ ] Data model defined and implemented with unit tests
-- [ ] Calculator engine interface designed
-- [ ] UX wireframes for both orientations
-- [ ] Drag-and-drop interaction model fully specified
-- [ ] Accessibility requirements documented
-- [ ] Production directory structure set up with Riverpod
-- [ ] All tests passing
-- [ ] No critical blockers remain
-- [ ] Sprint 003 can begin implementation without ambiguity
+- [x] Architecture document created with layers, widget tree, provider graph, and directory structure
+- [x] Data model defined and implemented with unit tests
+- [x] Calculator engine interface designed
+- [x] UX wireframes for both orientations
+- [x] Drag-and-drop interaction model fully specified
+- [x] Accessibility requirements documented
+- [x] Production directory structure set up with Riverpod
+- [x] All tests passing (54 tests)
+- [x] No critical blockers remain
+- [x] Sprint 003 can begin implementation without ambiguity
 
 ---
 
