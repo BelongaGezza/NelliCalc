@@ -1,6 +1,6 @@
 # Sprint 002: Architecture, Data Model & UX Design
 
-**Status:** In Progress
+**Status:** Archived
 **Release:** R01 | **Phase:** P01
 **Start:** 2026-02-09 | **Target End:** 2026-02-16
 
@@ -356,8 +356,8 @@ Sprint is considered complete when:
 
 ## Archival
 
-**Archived Date:** TBD
-**Archived By:** TBD
+**Archived Date:** 2026-02-14
+**Archived By:** Senior Engineer
 **Archive Location:** `SPRINTS/archive/sprint-002-architecture.md`
 
 _Move completed sprints to archive/ to minimise context loading for active work._

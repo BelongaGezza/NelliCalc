@@ -1,8 +1,8 @@
 # Project Status
 
-**Current Release:** R01 (Foundation)
-**Current Phase:** P01 (Tech Stack & Architecture)
-**Current Sprint:** sprint-002-architecture
+**Current Release:** R02 (Core Development)
+**Current Phase:** P02 (Core Development)
+**Current Sprint:** sprint-003-calculator-engine
 **Tech Stack:** Flutter (Dart)
 
 ## Release Roadmap
@@ -10,8 +10,8 @@
 | Release | Focus | Status |
 |---------|-------|--------|
 | R00 | Repository setup and configuration | COMPLETE |
-| R01 | Tech stack, architecture, and project foundation | CURRENT |
-| R02 | Core calculator engine and data persistence | Planned |
+| R01 | Tech stack, architecture, and project foundation | COMPLETE |
+| R02 | Core calculator engine and data persistence | CURRENT |
 | R03 | UI/UX implementation (responsive, touch, drag-and-drop) | Planned |
 | R04 | Platform optimisation, testing, and release | Planned |
 
@@ -24,7 +24,7 @@
 ### R01-P01: Foundation
 
 - Sprint 001: Flutter project scaffold, drag-and-drop PoC, CI/CD setup — COMPLETE
-- Sprint 002: Architecture document, data model, UX wireframes and interaction design
+- Sprint 002: Architecture document, data model, UX wireframes and interaction design — COMPLETE
 
 ### R02-P02: Core Development
 
@@ -55,8 +55,8 @@ The design track runs independently of the engine sprints. It produces a non-fun
 |--------|-------|-------------|--------|
 | 000 | R00 | Repository setup | Complete |
 | 001 | R01 | Flutter scaffold + PoC + CI/CD | Complete |
-| 002 | R01 | Architecture + data model + UX design | Pending |
-| 003 | R02 | Calculator engine + tests | Pending |
+| 002 | R01 | Architecture + data model + UX design | Complete |
+| 003 | R02 | Calculator engine + tests | Current |
 | 004 | R02 | Result history + persistence + tests | Pending |
 | D01 | Design | Visual prototype + theme + feedback | Pending |
 | D02 | Design | Design iteration (if needed) | Planned |
@@ -90,6 +90,9 @@ Sprint 004 ─────────►   Sprint D02 ────────�
 | Responsive breakpoint | 2026-02-09 | 600dp (wide/narrow) | Sprint 001 PoC |
 | UI feedback approach | 2026-02-09 | Parallel design track + Linux screenshots | Team Leader review |
 | Licensing | 2026-02-09 | Dual MIT/Apache-2.0 | Sprint 000 |
+| Architecture | 2026-02-11 | Three-layer (presentation/domain/data) + Riverpod | [architecture.md](RESEARCH/architecture.md) |
+| Persistence | 2026-02-11 | shared_preferences (JSON array) | [architecture.md](RESEARCH/architecture.md) |
+| Calculator engine | 2026-02-11 | Custom recursive descent parser, double precision | [architecture.md](RESEARCH/architecture.md) |
 
 ## Design Principles
 
@@ -102,7 +105,7 @@ Sprint 004 ─────────►   Sprint D02 ────────�
 
 ## Quick Links
 
-- Active Sprint: [SPRINTS/sprint-002-architecture.md](SPRINTS/sprint-002-architecture.md)
+- Active Sprint: [SPRINTS/sprint-003-calculator-engine.md](SPRINTS/sprint-003-calculator-engine.md)
 - Design Track: [SPRINTS/sprint-D01-visual-prototype.md](SPRINTS/sprint-D01-visual-prototype.md) (pending)
 - Archived Sprints: [SPRINTS/archive/](SPRINTS/archive/)
 - Lessons Learnt: [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
@@ -118,4 +121,4 @@ Sprint 004 ─────────►   Sprint D02 ────────�
 
 ---
 
-_Last updated: 2026-02-09_
+_Last updated: 2026-02-14_
