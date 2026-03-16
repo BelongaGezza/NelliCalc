@@ -2,7 +2,7 @@
 
 **Current Release:** R02 (Core Development)
 **Current Phase:** P02 (Core Development)
-**Current Sprint:** sprint-003-calculator-engine
+**Current Sprint:** sprint-004-result-history
 **Tech Stack:** Flutter (Dart)
 
 ## Release Roadmap
@@ -28,7 +28,7 @@
 
 ### R02-P02: Core Development
 
-- Sprint 003: Calculator engine (expression parsing, evaluation, error handling) + unit tests
+- Sprint 003: Calculator engine (expression parsing, evaluation, error handling) + unit tests — COMPLETE (archived)
 - Sprint 004: Result history and data persistence (local storage) + tests
 
 ### D-Track: Parallel Design Track (runs alongside R02)
@@ -56,8 +56,8 @@ The design track runs independently of the engine sprints. It produces a non-fun
 | 000 | R00 | Repository setup | Complete |
 | 001 | R01 | Flutter scaffold + PoC + CI/CD | Complete |
 | 002 | R01 | Architecture + data model + UX design | Complete |
-| 003 | R02 | Calculator engine + tests | Current |
-| 004 | R02 | Result history + persistence + tests | Pending |
+| 003 | R02 | Calculator engine + tests | Complete |
+| 004 | R02 | Result history + persistence + tests | Current |
 | D01 | Design | Visual prototype + theme + feedback | Pending |
 | D02 | Design | Design iteration (if needed) | Planned |
 | 005 | R03 | Integrate styled UI + engine | Pending |
@@ -80,6 +80,12 @@ Sprint 004 ─────────►   Sprint D02 ────────�
                          ▼
                   Sprint 005  (converge: styled UI + working engine)
 ```
+
+## Pending Actions
+
+| Action | Raised | Assigned To | Status |
+|--------|--------|-------------|--------|
+| Review Dart Code v3.130.1 — assess whether to refactor codebase to the current updated standard | 2026-03-16 | Senior Engineer + System Architect | Pending |
 
 ## Key Decisions
 
@@ -105,7 +111,7 @@ Sprint 004 ─────────►   Sprint D02 ────────�
 
 ## Quick Links
 
-- Active Sprint: [SPRINTS/sprint-003-calculator-engine.md](SPRINTS/sprint-003-calculator-engine.md)
+- Active Sprint: [SPRINTS/sprint-004-result-history.md](SPRINTS/sprint-004-result-history.md) (to be created from template)
 - Design Track: [SPRINTS/sprint-D01-visual-prototype.md](SPRINTS/sprint-D01-visual-prototype.md) (pending)
 - Archived Sprints: [SPRINTS/archive/](SPRINTS/archive/)
 - Lessons Learnt: [LESSONS_LEARNED.md](LESSONS_LEARNED.md)
@@ -121,4 +127,4 @@ Sprint 004 ─────────►   Sprint D02 ────────�
 
 ---
 
-_Last updated: 2026-02-14_
+_Last updated: 2026-03-16_

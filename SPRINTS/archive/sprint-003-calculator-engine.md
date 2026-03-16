@@ -1,6 +1,6 @@
 # Sprint 003: Calculator Engine + Unit Tests
 
-**Status:** Planning
+**Status:** Complete
 **Release:** R02 | **Phase:** P02
 **Start:** 2026-02-14 | **Target End:** 2026-02-21
 
@@ -29,8 +29,8 @@ Implement the calculator engine (expression parsing, evaluation, error handling)
 
 | Role | Persona File | Status | Assigned Agent | Tasks | Dependencies |
 |------|--------------|--------|----------------|-------|--------------|
-| Senior Engineer | `.agents/senior-engineer.md` | Available | - | 1.1, 1.2, 2.1, 2.2, 3.1 | None |
-| Junior Engineer | `.agents/junior-engineer.md` | Available | - | 1.3, 2.3 | Task 1.1, 2.1 |
+| Senior Engineer | `.agents/senior-engineer.md` | In Progress | cursor-senior-2026-03-16 | 1.1, 1.2, 2.1, 2.2, 3.1 | None |
+| Junior Engineer | `.agents/junior-engineer.md` | In Progress | cursor-junior-2026-03-16 | 1.3, 2.3 | Task 1.1, 2.1 |
 
 **Available Persona Files:**
 - System Architect: `.agents/system-architect.md`
@@ -83,7 +83,7 @@ Sprint 002 delivered the complete architecture and data model:
 - [ ] Pure Dart — zero Flutter imports in `lib/engine/`
 - [ ] `dart analyze` clean, `dart format` clean
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** Senior Engineer
 **Dependencies:** None (data model and error types already implemented in Sprint 002)
 **Priority:** Critical
@@ -109,7 +109,7 @@ Sprint 002 delivered the complete architecture and data model:
 - [ ] Result validation via `_validateResult()` as per architecture doc
 - [ ] No unhandled exceptions escape `evaluate()` — wrap unexpected errors in `CalculatorError(type: unknownError)`
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** Senior Engineer
 **Dependencies:** Task 1.1
 **Priority:** Critical
@@ -127,19 +127,19 @@ Sprint 002 delivered the complete architecture and data model:
 **Objective:** Comprehensive unit tests for the calculator engine covering arithmetic, precedence, edge cases, and errors.
 
 **Acceptance Criteria:**
-- [ ] Tests in `test/engine/calculator_engine_test.dart`
-- [ ] Basic arithmetic: `3 + 4`, `10 - 3`, `6 * 7`, `15 / 3`
-- [ ] Decimal numbers: `3.14 + 1`, `0.1 + 0.2` (precision check)
-- [ ] Operator precedence: `2 + 3 * 4 = 14`, `(2 + 3) * 4 = 20`
-- [ ] Left-to-right associativity: `10 / 2 * 3 = 15`, `10 - 2 + 3 = 11`
-- [ ] Unary minus: `-5 + 3`, `-(2 + 3)`, `2 * -3`
-- [ ] Nested parentheses: `((2 + 3) * (4 - 1))`
-- [ ] Whitespace handling: `  2 + 3  `, `2+3` (no spaces)
-- [ ] Error cases: empty string, `3 + + 4`, `3 +`, `10 / 0`, unmatched `(`, `)`
-- [ ] Large numbers and edge cases
-- [ ] All tests passing, `dart analyze` clean
+- [x] Tests in `test/engine/calculator_engine_test.dart`
+- [x] Basic arithmetic: `3 + 4`, `10 - 3`, `6 * 7`, `15 / 3`
+- [x] Decimal numbers: `3.14 + 1`, `0.1 + 0.2` (precision check)
+- [x] Operator precedence: `2 + 3 * 4 = 14`, `(2 + 3) * 4 = 20`
+- [x] Left-to-right associativity: `10 / 2 * 3 = 15`, `10 - 2 + 3 = 11`
+- [x] Unary minus: `-5 + 3`, `-(2 + 3)`, `2 * -3`
+- [x] Nested parentheses: `((2 + 3) * (4 - 1))`
+- [x] Whitespace handling: `  2 + 3  `, `2+3` (no spaces)
+- [x] Error cases: empty string, `3 + + 4`, `3 +`, `10 / 0`, unmatched `(`, `)`
+- [x] Large numbers and edge cases
+- [x] All tests passing, `dart analyze` clean
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** Junior Engineer
 **Dependencies:** Task 1.1, 1.2
 **Priority:** Critical
@@ -169,7 +169,7 @@ Sprint 002 delivered the complete architecture and data model:
 - [ ] Engine injected via constructor (testable without Riverpod overrides)
 - [ ] `dart analyze` clean, `dart format` clean
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** Senior Engineer
 **Dependencies:** Task 1.1 (needs working engine)
 **Priority:** High
@@ -196,7 +196,7 @@ Sprint 002 delivered the complete architecture and data model:
 - [ ] Negative results handled correctly
 - [ ] Function located in or alongside `calculator_provider.dart`
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** Senior Engineer
 **Dependencies:** Task 2.1
 **Priority:** High
@@ -213,21 +213,21 @@ Sprint 002 delivered the complete architecture and data model:
 **Objective:** Unit tests for `CalculatorNotifier` covering input methods, evaluation, error handling, and state transitions.
 
 **Acceptance Criteria:**
-- [ ] Tests in `test/providers/calculator_provider_test.dart`
-- [ ] Input digit appends to expression
-- [ ] Input operator appends to expression
-- [ ] Input decimal appends to expression
-- [ ] Input parenthesis appends to expression
-- [ ] Evaluate produces correct result and display
-- [ ] Evaluate with error sets `state.error` and clears `state.result`
-- [ ] Clear resets to default state
-- [ ] Backspace removes last character
-- [ ] Backspace on empty expression keeps display as `'0'`
-- [ ] `insertValue()` appends to expression
-- [ ] `formatResult()` tested for trailing zeros, precision, negatives
-- [ ] All tests passing, `dart analyze` clean
+- [x] Tests in `test/providers/calculator_provider_test.dart`
+- [x] Input digit appends to expression
+- [x] Input operator appends to expression
+- [x] Input decimal appends to expression
+- [x] Input parenthesis appends to expression
+- [x] Evaluate produces correct result and display
+- [x] Evaluate with error sets `state.error` and clears `state.result`
+- [x] Clear resets to default state
+- [x] Backspace removes last character
+- [x] Backspace on empty expression keeps display as `'0'`
+- [x] `insertValue()` appends to expression
+- [x] `formatResult()` tested for trailing zeros, precision, negatives
+- [x] All tests passing, `dart analyze` clean
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** Junior Engineer
 **Dependencies:** Task 2.1, 2.2
 **Priority:** High
@@ -254,7 +254,7 @@ Sprint 002 delivered the complete architecture and data model:
 - [ ] All existing tests still pass (54 + new tests)
 - [ ] `dart analyze` clean, `dart format` clean, `flutter test` all passing
 
-**Status:** Not Started
+**Status:** Complete
 **Assigned:** Senior Engineer
 **Dependencies:** Task 2.1
 **Priority:** Medium
@@ -270,7 +270,12 @@ Sprint 002 delivered the complete architecture and data model:
 
 Record handover notes, blockers, and status updates here in chronological order (newest first).
 
-_No entries yet._
+- **2026-03-16** — Sprint 003 validated complete. All 103 tests passing, dart analyze clean, dart format clean. Archived.
+- **2026-03-16** — Junior Engineer (cursor-agent-2026-03-16) completed Task 2.3. Created `test/providers/calculator_provider_test.dart` with 19 tests covering input methods, evaluate, clear, backspace, insertValue, and formatResult. All 103 tests passing.
+- **2026-03-16** — Junior Engineer (cursor-junior-2026-03-16) completed Task 1.3. Added 28 engine unit tests in `test/engine/calculator_engine_test.dart`. All tests passing, dart analyze clean.
+- **2026-03-16** — Junior Engineer (cursor-junior-2026-03-16) claimed role. Starting Task 1.3 (engine unit tests). Engine implementation complete (1.1, 1.2).
+- **2026-03-16** — Senior Engineer (cursor-senior-2026-03-16) claimed role. Starting Task 1.1 (recursive descent parser).
+- **2026-03-16** — Senior Engineer completed Tasks 1.1, 1.2, 2.1, 2.2, 3.1. Calculator engine, CalculatorNotifier, formatResult(), and integration test implemented. All 103 tests passing, dart analyze clean.
 
 ---
 
@@ -293,16 +298,16 @@ _No entries yet._
 
 Sprint is considered complete when:
 
-- [ ] Calculator engine evaluates expressions with correct BODMAS/PEMDAS precedence
-- [ ] All error cases handled (division by zero, malformed, overflow)
-- [ ] CalculatorNotifier manages state transitions for all input methods
-- [ ] Result formatting strips trailing zeros and corrects floating-point artefacts
-- [ ] Comprehensive unit tests for engine, notifier, and formatting
-- [ ] Provider integration test passes
-- [ ] All tests passing (existing + new)
-- [ ] `dart analyze` clean, `dart format` clean
-- [ ] No critical blockers remain
-- [ ] Sprint 004 can begin history + persistence without ambiguity
+- [x] Calculator engine evaluates expressions with correct BODMAS/PEMDAS precedence
+- [x] All error cases handled (division by zero, malformed, overflow)
+- [x] CalculatorNotifier manages state transitions for all input methods
+- [x] Result formatting strips trailing zeros and corrects floating-point artefacts
+- [x] Comprehensive unit tests for engine, notifier, and formatting
+- [x] Provider integration test passes
+- [x] All tests passing (existing + new)
+- [x] `dart analyze` clean, `dart format` clean
+- [x] No critical blockers remain
+- [x] Sprint 004 can begin history + persistence without ambiguity
 
 ---
 
@@ -324,8 +329,8 @@ Sprint is considered complete when:
 
 ## Archival
 
-**Archived Date:** TBD
-**Archived By:** TBD
+**Archived Date:** 2026-03-16
+**Archived By:** cursor-agent
 **Archive Location:** `SPRINTS/archive/sprint-003-calculator-engine.md`
 
 _Move completed sprints to archive/ to minimise context loading for active work._
