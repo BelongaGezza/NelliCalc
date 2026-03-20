@@ -1,4 +1,4 @@
-// TODO(sprint-003): Implement HistoryItem widget.
+// TODO(sprint-004): Implement HistoryItem widget.
 //
 // A single history entry that can be long-press-dragged into the
 // calculator display.
@@ -12,7 +12,7 @@ class HistoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(sprint-003): Implement LongPressDraggable history item.
+    // TODO(sprint-004): Implement LongPressDraggable history item.
     return const Placeholder();
   }
 }

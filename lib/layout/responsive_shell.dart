@@ -1,4 +1,4 @@
-// TODO(sprint-003): Implement full responsive shell with LayoutBuilder.
+// TODO(sprint-004): Implement full responsive shell with LayoutBuilder.
 //
 // Switches between wide (side-by-side history panel) and narrow
 // (bottom sheet history) layouts at the 600dp breakpoint.

@@ -1,4 +1,4 @@
-// TODO(sprint-003): Implement HistoryPanel widget.
+// TODO(sprint-004): Implement HistoryPanel widget.
 //
 // Displays history entries in a scrollable list for wide (landscape)
 // layouts.
@@ -12,7 +12,7 @@ class HistoryPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(sprint-003): Implement history list for landscape layout.
+    // TODO(sprint-004): Implement history list for landscape layout.
     return const Placeholder();
   }
 }

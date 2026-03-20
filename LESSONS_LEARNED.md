@@ -40,7 +40,29 @@ How to avoid this in future. What to check for during reviews.
 
 ## Build & Tooling (001-099)
 
-_No lessons recorded yet. This section will populate as issues are encountered._
+### LESSON-001: Android Gradle NDK auto-install failures (InstallFailedException)
+
+**Category:** Build & Tooling  
+**Date:** 2026-03-20  
+**Severity:** Medium  
+**Sprint:** sprint-003-calculator-engine (Android / IDE)
+
+**Problem:**  
+The Java/Gradle IDE integration reported `InstallFailedException` for NDK `28.2.13676358` during project configuration, even when the NDK was already present under `ANDROID_SDK/ndk/<version>`. Gradle’s automatic SDK component install can fail (permissions, SDK Manager, or offline use).
+
+**Solution:**  
+1. Set `android.builder.sdkDownload=false` in `android/gradle.properties` so Gradle does not attempt to auto-download SDK/NDK packages.  
+2. Add an explicit **`ndk.dir`** in `android/local.properties` (gitignored) pointing at the side-by-side NDK folder, e.g. `ndk.dir=/path/to/Android/Sdk/ndk/28.2.13676358`. This often stops AGP from invoking SDK Manager install when the NDK is already on disk.  
+3. Install required components manually if needed: Android Studio → SDK Manager → SDK Tools → NDK, or `sdkmanager "ndk;28.2.13676358"`.  
+4. Copy `android/local.properties.example` to `android/local.properties` and adjust paths.
+
+**Prevention:**  
+Document local Android setup for contributors; keep Flutter’s expected NDK version aligned with `flutter.ndkVersion` / Flutter release notes.
+
+**Related Files:** `android/gradle.properties`, `android/local.properties`, `android/local.properties.example`  
+**Cross-References:** [Android NDK install](https://developer.android.com/studio/projects/install-ndk)
+
+---
 
 ## Language-Specific Gotchas (100-199)
 

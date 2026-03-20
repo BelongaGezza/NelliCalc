@@ -1,4 +1,4 @@
-// TODO(sprint-003): Implement abstract HistoryRepository interface.
+// TODO(sprint-004): Implement abstract HistoryRepository interface.
 //
 // Defines the contract for persisting and retrieving history entries.
 

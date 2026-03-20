@@ -4,6 +4,9 @@ analyzer:
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
+  # Sprint placeholders use // TODO(sprint-NNN): … comments; suppress hint-level diagnostics.
+  errors:
+    todo: ignore
 
 linter:
   rules:

@@ -1,4 +1,4 @@
-// TODO(sprint-003): Implement LocalHistoryRepository with local storage.
+// TODO(sprint-004): Implement LocalHistoryRepository with local storage.
 //
 // Concrete implementation of HistoryRepository that persists history
 // entries to local device storage.
@@ -13,17 +13,17 @@ class LocalHistoryRepository implements HistoryRepository {
 
   @override
   Future<List<HistoryEntry>> loadAll() async {
-    // TODO(sprint-003): Implement local storage load.
+    // TODO(sprint-004): Implement local storage load.
     return [];
   }
 
   @override
   Future<void> save(HistoryEntry entry) async {
-    // TODO(sprint-003): Implement local storage save.
+    // TODO(sprint-004): Implement local storage save.
   }
 
   @override
   Future<void> clearAll() async {
-    // TODO(sprint-003): Implement local storage clear.
+    // TODO(sprint-004): Implement local storage clear.
   }
 }

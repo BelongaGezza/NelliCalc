@@ -1,4 +1,4 @@
-// TODO(sprint-003): Implement CalculatorDisplay widget.
+// TODO(sprint-004): Implement CalculatorDisplay widget.
 //
 // Shows the current expression and result. Acts as a DragTarget so
 // history items can be dropped onto it.
@@ -14,7 +14,7 @@ class CalculatorDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(sprint-003): Implement display with DragTarget.
+    // TODO(sprint-004): Implement display with DragTarget.
     return const Placeholder();
   }
 }

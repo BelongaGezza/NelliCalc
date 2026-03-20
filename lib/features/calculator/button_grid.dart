@@ -1,4 +1,4 @@
-// TODO(sprint-003): Implement ButtonGrid widget.
+// TODO(sprint-004): Implement ButtonGrid widget.
 //
 // Renders the calculator button grid with digits, operators, and
 // action buttons (clear, equals, etc.).
@@ -12,7 +12,7 @@ class ButtonGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(sprint-003): Implement button grid layout.
+    // TODO(sprint-004): Implement button grid layout.
     return const Placeholder();
   }
 }

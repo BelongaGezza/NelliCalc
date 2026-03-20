@@ -1,0 +1,7 @@
+# Copy this file to `local.properties` in the same directory (local.properties is gitignored).
+# Paths must match your machine. Flutter generates sdk.dir and flutter.sdk on first build;
+# add ndk.dir if Gradle / the Java language server reports NDK InstallFailedException.
+
+sdk.dir=/path/to/Android/Sdk
+ndk.dir=/path/to/Android/Sdk/ndk/28.2.13676358
+flutter.sdk=/path/to/flutter

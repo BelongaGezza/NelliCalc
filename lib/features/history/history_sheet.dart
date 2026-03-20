@@ -1,4 +1,4 @@
-// TODO(sprint-003): Implement HistorySheet widget.
+// TODO(sprint-004): Implement HistorySheet widget.
 //
 // A DraggableScrollableSheet that slides up from the bottom in narrow
 // (portrait) layouts, showing history entries.
@@ -12,7 +12,7 @@ class HistorySheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(sprint-003): Implement draggable scrollable sheet.
+    // TODO(sprint-004): Implement draggable scrollable sheet.
     return const Placeholder();
   }
 }
